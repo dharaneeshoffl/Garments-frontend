@@ -21,12 +21,12 @@ let ShopContextProvider = (props) => {
   
 
   useEffect(() => {
-    fetch("https://garments-backend-o7ag.onrender.com/allproducts")
+    fetch("https://garments-black.vercel.app/allproducts")
       .then((response) => response.json())
       .then((data) => setAll_Product(data));
     
     if (localStorage.getItem('auth-token')) {
-      fetch(`https://garments-backend-o7ag.onrender.com/getcart`, {
+      fetch(`https://garments-black.vercel.app/getcart`, {
         method: "POST",
         headers: {
           Accept: "appliction/form-data",
@@ -45,7 +45,7 @@ let ShopContextProvider = (props) => {
     let addToCart = (itemId) => {
       setCartitems((prev) => ({ ...prev, [itemId]: prev[itemId] + 1 }))
       if (localStorage.getItem('auth-token')) {
-        fetch(`https://garments-backend-o7ag.onrender.com/addtocart`, {
+        fetch(`https://garments-black.vercel.app/addtocart`, {
           method: "POST",
           headers: {
             Accept: "application/form-data",
@@ -64,7 +64,7 @@ let ShopContextProvider = (props) => {
       setCartitems((prev) => ({ ...prev, [itemId]: prev[itemId] - 1 }));
 
       if (localStorage.getItem('auth-token')) {
-        fetch(`https://garments-backend-o7ag.onrender.com/removefromcart`, {
+        fetch(`https://garments-black.vercel.app/removefromcart`, {
           method: "POST",
           headers: {
             Accept: "application/form-data",
