@@ -6,7 +6,7 @@ export default function Newcollections() {
   const [new_collection, setNew_collection] = useState([])
   
   useEffect(() => {
-    fetch(`https://garments-backend-o7ag.onrender.com/newcollections`)
+    fetch(`https://garments-black.vercel.app/newcollections`)
       .then((response) => response.json())
       .then((data) => setNew_collection(data));
   },[])
